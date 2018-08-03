@@ -6,10 +6,11 @@ The more advanced Golang version html content extractor is [here](https://github
 ## Usage
 ```python
 import requests
+import pyce
 
 url = "http://mil.sohu.com/20150504/n412317568.shtml"
 html = requests.get(url).content
-encoding, time, title, text, next_link = parse(url, html)
+encoding, time, title, text, next_link = pyce.parse(url, html)
 print("编码："+encoding)
 print('='*10)
 print("标题："+title.encode('utf-8','ignore'))
