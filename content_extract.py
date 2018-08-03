@@ -196,9 +196,10 @@ def parse(url, html):
     return encoding, time, title, text, link
 
 if __name__ == "__main__":
-    html = open('test.html',"rb").read()
-    #encoding, time, title, text, next_link = parse('http://www.qq.com',html)
-    encoding, time, title, text, next_link = parse('http://mil.sohu.com/20150504/n412317568.shtml',html)
+    url = "http://mil.sohu.com/20150504/n412317568.shtml"
+    import requests
+    html = requests.get(url).content
+    encoding, time, title, text, next_link = parse(url, html)
     print("编码："+encoding)
     print('='*10)
     print("标题："+title.encode('utf-8','ignore'))
