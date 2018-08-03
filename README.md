@@ -5,8 +5,9 @@ The more advanced Golang version html content extractor is [here](https://github
 
 ## Usage
 ```python
-url = "http://mil.sohu.com/20150504/n412317568.shtml"
 import requests
+
+url = "http://mil.sohu.com/20150504/n412317568.shtml"
 html = requests.get(url).content
 encoding, time, title, text, next_link = parse(url, html)
 print("编码："+encoding)
